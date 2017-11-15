@@ -9,7 +9,7 @@ There are some great efforts to this end including [MiniShift](https://github.co
 ### RHEL and CentOS 7
 While RHEL is a Linux distro licensed and supported by Red Hat, you can run it as a developer for no charge thanks to [Red Hat's Developer Program](https://developers.redhat.com/). 
 
-First, create a VM for [RHEL](https://developers.redhat.com/downloads/) or [CentOS](https://www.centos.org/download/) 7 using [VirtualBox](https://virtualbox.org).  For my testing, I used a 2 CPU 4 GB machine.  If you find yourself on and off different networks including VPNs on a frequent basis, you might consider using the "NAT Network" option explained [here](https://github.com/carljmosca/virtualbox-notes).
+First, create a VM for [RHEL](https://developers.redhat.com/downloads/) or [CentOS](https://www.centos.org/download/) 7 using [VirtualBox](https://virtualbox.org).  For my testing, I used a 2 CPU 4 GB machine.  If you find yourself on and off different networks including VPNs on a frequent basis, you might consider using the "NAT Network" option explained [here](https://github.com/carljmosca/virtualbox-notes).  Configuration using the "NAT Network" is not required and only suggested for the given use cases as it does add a bit of complexity.
 
 If you are running RHEL, you'll need to register and add the extras repository:
 ```
@@ -110,4 +110,9 @@ If so, from the VM, flush the iptables rules:
 ```
 iptables -F
 ```
-If you tried the Apache HTTP Server example and you have things configured as suggested here, you'll want to add ":8080" to the end of the application link.  
+If you tried the Apache HTTP Server example and you have things configured as suggested here, you'll want to add ":8080" to the end of the application link.
+
+You should stop OpenShift before shutting down your VM using the appropriate command:
+```
+oc cluster down
+``` 

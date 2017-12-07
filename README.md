@@ -49,9 +49,9 @@ systemctl start docker
 
 Then download the OpenShift command line tools and make them available on the PATH:
 ```
-wget https://github.com/openshift/origin/releases/download/v3.7.0-rc.0/openshift-origin-client-tools-v3.7.0-rc.0-e92d5c5-linux-64bit.tar.gz
-tar xzvf openshift-origin-client-tools-v3.7.0-rc.0-e92d5c5-linux-64bit.tar.gz
-cd openshift-origin-client-tools-v3.7.0-rc.0-e92d5c5-linux-64bit
+wget https://github.com/openshift/origin/releases/download/v3.7.0/openshift-origin-client-tools-v3.7.0-7ed6862-linux-64bit.tar.gz
+tar xzvf openshift-origin-client-tools-v3.7.0-7ed6862-linux-64bit.tar.gz
+cd openshift-origin-client-tools-v3.7.0-7ed6862-linux-64bit
 sudo mv oc /usr/local/bin/
 ```
 

@@ -20,9 +20,9 @@ Update the operating system
 ```
 yum update -y
 ```
-Install Docker and wget
+Install Docker and wget (along with python setup tools to address an issue) [described here](https://access.redhat.com/solutions/3259271)
 ```
-yum install -y docker wget
+yum install -y docker wget python-setuptools
 ```
 Prepare Docker for use with OpenShift by editing /etc/sysconfig/docker.  Add the following to the OPTIONS value:
 

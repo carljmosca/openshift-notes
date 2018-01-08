@@ -98,7 +98,7 @@ mkdir ~/openshift-data
 
 Start OpenShift
 ```
-oc cluster up --host-data-dir=/home/<username>/openshift-data --use-existing-config
+oc cluster up "--host-data-dir=${HOME}/openshift-data" --use-existing-config
 ```
 
 At this point OpenShift should be running but if "NAT Network" was chosen as suggested above, OpenShift will not be accessible from the host yet.  In order to make that work, port forwarding must be configured.  The [instructions referenced above](https://github.com/carljmosca/virtualbox-notes) provide an overview.  First, we need the address of our VM.

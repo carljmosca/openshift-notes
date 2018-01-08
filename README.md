@@ -63,6 +63,16 @@ firewall-cmd --add-port 8444/tcp --permanent
 firewall-cmd --reload
 ```
 
+In addition to these ports, because of a potential DNS issue, another zone with appropriate ports should also be added
+```
+firewall-cmd --permanent --new-zone dockerc
+firewall-cmd --permanent --zone dockerc --add-source 172.17.0.0/16
+firewall-cmd --permanent --zone dockerc --add-port 8443/tcp
+firewall-cmd --permanent --zone dockerc --add-port 53/udp
+firewall-cmd --permanent --zone dockerc --add-port 8053/udp
+firewall-cmd --reload
+```
+
 If you would like to run Docker as a non-root user, the following three steps should be followed:
 
 1. Add the dockerroot group to the desired user(s)

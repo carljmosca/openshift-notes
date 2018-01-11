@@ -126,3 +126,26 @@ You should stop OpenShift before shutting down your VM using the appropriate com
 ```
 oc cluster down
 ``` 
+
+### Changing Docker storage
+
+First, add another drive to your VM
+```
+cat <<EOF > /etc/sysconfig/docker-storage-setup
+DEVS=/dev/vdc
+VG=docker-vg
+EOF
+```
+
+```
+docker-storage-setup 
+```
+Verify
+```
+cat /etc/sysconfig/docker-storage
+```
+Restart Docker
+```
+systemctl stop docker
+systemctl start docker
+```

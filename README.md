@@ -129,7 +129,9 @@ oc cluster down
 
 ### Changing Docker storage
 
-First, add another drive to your VM
+First, if you don't have an avaialble deive, add another drive to your VM
+
+Next, run the following command to add the drive to Docker (replacing "/dev/vdc" with your drive)
 ```
 cat <<EOF > /etc/sysconfig/docker-storage-setup
 DEVS=/dev/vdc
@@ -137,13 +139,16 @@ VG=docker-vg
 EOF
 ```
 
+Now, run Docker storage setup to reconfigure
 ```
 docker-storage-setup 
 ```
-Verify
+
+Verify the configuration
 ```
 cat /etc/sysconfig/docker-storage
 ```
+
 Restart Docker
 ```
 systemctl stop docker

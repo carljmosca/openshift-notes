@@ -58,6 +58,7 @@ sudo mv /tmp/openshift-origin-client-tools-v3.7.0-7ed6862-linux-64bit/oc /usr/lo
 Open ports which might be used by OpenShift
 ```
 firewall-cmd --add-port 80/tcp --permanent
+firewall-cmd --add-port 443/tcp --permanent
 firewall-cmd --add-port 8443/tcp --permanent
 firewall-cmd --add-port 8444/tcp --permanent
 firewall-cmd --reload
